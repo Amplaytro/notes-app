@@ -1,0 +1,138 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: var(--color-sidebar-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    width: 90%;
+    max-width: 450px;
+    box-shadow: var(--shadow-lg);
+}
+
+.title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-lg);
+}
+
+.label {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.input {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+}
+
+.inputError {
+    border-color: #e74c3c;
+}
+
+.errorText {
+    color: #e74c3c;
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+}
+
+.colorSection {
+    margin-bottom: var(--spacing-xl);
+}
+
+.colorLabel {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+.colorPicker {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.colorOption {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    border: 3px solid transparent;
+}
+
+.colorOption:hover {
+    transform: scale(1.1);
+}
+
+.colorOptionSelected {
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 2px var(--color-sidebar-bg), 0 0 0 4px var(--color-text-primary);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+.cancelButton {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background-color: transparent;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.cancelButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.createButtonModal {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-white);
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.createButtonModal:hover {
+    background-color: var(--color-primary-light);
+}
+
+.createButtonModal:disabled {
+    background-color: var(--color-border);
+    cursor: not-allowed;
+}

@@ -1,0 +1,42 @@
+.groupItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.groupItem:hover {
+    background-color: rgba(0, 31, 139, 0.05);
+}
+
+.groupItemSelected {
+    background-color: rgba(0, 31, 139, 0.1);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.initials {
+    color: var(--color-text-white);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.groupName {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

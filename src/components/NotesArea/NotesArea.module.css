@@ -1,0 +1,97 @@
+.notesArea {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #DAE5F5;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.backButton {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-white);
+    background-color: transparent;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.backButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.initials {
+    color: var(--color-text-white);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.groupName {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-text-white);
+}
+
+.notesContainer {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+.notesList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.emptyText {
+    font-size: var(--font-size-lg);
+}
+
+/* Responsive - show back button on mobile */
+@media (max-width: 768px) {
+    .backButton {
+        display: flex;
+    }
+}

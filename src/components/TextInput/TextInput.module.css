@@ -1,0 +1,55 @@
+.inputContainer {
+    padding: var(--spacing-lg);
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: flex-end;
+    gap: var(--spacing-md);
+}
+
+.textareaWrapper {
+    flex: 1;
+    position: relative;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    padding: var(--spacing-md);
+    background-color: var(--color-input-bg);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    resize: none;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+.textarea::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.sendButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: color var(--transition-fast);
+    flex-shrink: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+.sendButtonActive {
+    color: var(--color-text-white);
+}
+
+.sendButtonInactive {
+    color: var(--color-send-inactive);
+    cursor: not-allowed;
+}
+
+.sendIcon {
+    width: 28px;
+    height: 28px;
+}

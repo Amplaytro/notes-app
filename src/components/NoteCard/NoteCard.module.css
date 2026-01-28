@@ -1,0 +1,36 @@
+.noteCard {
+    background-color: #FFFFFF;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.noteContent {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: var(--spacing-md);
+}
+
+.noteMetadata {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.noteDate {
+    font-weight: 500;
+}
+
+.noteDot {
+    color: var(--color-text-secondary);
+}
+
+.noteTime {
+    font-weight: 400;
+}

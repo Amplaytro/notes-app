@@ -1,0 +1,52 @@
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-sidebar-bg);
+}
+
+.header {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+}
+
+.groupList {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md) 0;
+}
+
+.createButton {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-lg);
+}
+
+.createButton:hover {
+    background-color: var(--color-primary-light);
+    transform: scale(1.05);
+}
+
+.plusIcon {
+    width: 24px;
+    height: 24px;
+}
