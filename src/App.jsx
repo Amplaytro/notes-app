@@ -45,8 +45,12 @@ function App() {
     setSelectedGroup(null);
   };
 
+  const containerClassName = `${styles.container} ${
+    selectedGroup ? styles.mobileShowNotes : styles.mobileShowSidebar
+  }`;
+
   return (
-    <div className={styles.container}>
+    <div className={containerClassName}>
       <div className={styles.sidebar}>
         <Sidebar
           groups={groups}

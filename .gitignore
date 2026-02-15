@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local reference repos / artifacts (created during debugging)
+.tmp_ref*/
+figma_*.png
+figma_page.html
+gh_search.html

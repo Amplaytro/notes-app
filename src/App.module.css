@@ -1,13 +1,14 @@
 .container {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--color-background);
 }
 
 .sidebar {
-    width: 320px;
-    min-width: 320px;
+    width: clamp(280px, 25vw, 360px);
+    min-width: 280px;
     height: 100%;
     background-color: var(--color-sidebar-bg);
     display: flex;
@@ -28,43 +29,73 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-xl);
+    padding: 32px;
     text-align: center;
     background-color: #DAE5F5;
     position: relative;
 }
 
 .welcomeImage {
-    width: 350px;
-    max-width: 80%;
-    margin-bottom: var(--spacing-lg);
+    width: 626px;
+    height: 313px;
+    max-width: 90%;
+    object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .welcomeTitle {
-    font-size: var(--font-size-3xl);
+    font-size: 50px;
     font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-md);
+    color: #292929;
+    margin-bottom: 12px;
 }
 
 .welcomeText {
-    font-size: var(--font-size-base);
-    color: #6B7385;
-    max-width: 500px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #292929;
+    max-width: 650px;
 }
 
 .encryptionNote {
     position: absolute;
-    bottom: var(--spacing-xl);
+    bottom: 20px;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-sm);
+    gap: 4px;
+    color: #292929;
+    font-size: 17px;
 }
 
 .lockIcon {
     width: 16px;
     height: 16px;
+}
+
+/* Mobile: show either the sidebar OR notes area (per Figma) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .mainContent {
+        width: 100%;
+        flex: 1;
+    }
+
+    .mobileShowSidebar .mainContent {
+        display: none;
+    }
+
+    .mobileShowNotes .sidebar {
+        display: none;
+    }
 }

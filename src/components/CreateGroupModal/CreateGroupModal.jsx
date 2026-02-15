@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './CreateGroupModal.module.css';
 import { GROUP_COLORS, VALIDATION } from '../../utils/constants';
 import { isDuplicateGroup } from '../../utils/helpers';
@@ -10,6 +10,13 @@ const CreateGroupModal = ({ isOpen, onClose, onCreateGroup, existingGroups }) =>
 
     const modalRef = useRef(null);
     const inputRef = useRef(null);
+
+    const handleClose = useCallback(() => {
+        setGroupName('');
+        setSelectedColor(GROUP_COLORS[0]);
+        setError('');
+        onClose();
+    }, [onClose]);
 
     // Focus input when modal opens
     useEffect(() => {
@@ -33,14 +40,7 @@ const CreateGroupModal = ({ isOpen, onClose, onCreateGroup, existingGroups }) =>
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [isOpen]);
-
-    const handleClose = () => {
-        setGroupName('');
-        setSelectedColor(GROUP_COLORS[0]);
-        setError('');
-        onClose();
-    };
+    }, [isOpen, handleClose]);
 
     const validateForm = () => {
         const trimmedName = groupName.trim();
@@ -78,30 +78,32 @@ const CreateGroupModal = ({ isOpen, onClose, onCreateGroup, existingGroups }) =>
     return (
         <div className={styles.overlay}>
             <div className={styles.modal} ref={modalRef}>
-                <h2 className={styles.title}>Create New Group</h2>
+                <h2 className={styles.title}>Create New group</h2>
 
                 <form onSubmit={handleSubmit}>
-                    <div className={styles.formGroup}>
-                        <label className={styles.label} htmlFor="groupName">
+                    <div className={styles.row}>
+                        <label className={styles.rowLabel} htmlFor="groupName">
                             Group Name
                         </label>
-                        <input
-                            ref={inputRef}
-                            id="groupName"
-                            type="text"
-                            className={`${styles.input} ${error ? styles.inputError : ''}`}
-                            value={groupName}
-                            onChange={(e) => {
-                                setGroupName(e.target.value);
-                                setError('');
-                            }}
-                            placeholder="Enter group name"
-                        />
-                        {error && <p className={styles.errorText}>{error}</p>}
+                        <div className={styles.rowField}>
+                            <input
+                                ref={inputRef}
+                                id="groupName"
+                                type="text"
+                                className={`${styles.input} ${error ? styles.inputError : ''}`}
+                                value={groupName}
+                                onChange={(e) => {
+                                    setGroupName(e.target.value);
+                                    setError('');
+                                }}
+                                placeholder="Enter group name"
+                            />
+                        </div>
                     </div>
+                    {error && <p className={styles.errorText}>{error}</p>}
 
-                    <div className={styles.colorSection}>
-                        <span className={styles.colorLabel}>Choose colour</span>
+                    <div className={styles.row}>
+                        <span className={styles.rowLabel}>Choose colour</span>
                         <div className={styles.colorPicker}>
                             {GROUP_COLORS.map((color) => (
                                 <button
@@ -117,13 +119,6 @@ const CreateGroupModal = ({ isOpen, onClose, onCreateGroup, existingGroups }) =>
                     </div>
 
                     <div className={styles.actions}>
-                        <button
-                            type="button"
-                            className={styles.cancelButton}
-                            onClick={handleClose}
-                        >
-                            Cancel
-                        </button>
                         <button
                             type="submit"
                             className={styles.createButtonModal}

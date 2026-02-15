@@ -7,14 +7,17 @@
 }
 
 .header {
-    padding: var(--spacing-lg) var(--spacing-xl);
+    padding: 24px 24px 12px;
     background-color: #FFFFFF;
-    text-align: center;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 
 .title {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
+    font-size: 35px;
+    font-weight: 500;
     color: var(--color-text-primary);
     letter-spacing: 0.5px;
 }
@@ -22,31 +25,54 @@
 .groupList {
     flex: 1;
     overflow-y: auto;
-    padding: var(--spacing-md) 0;
+    padding: 12px 0 140px;
 }
 
 .createButton {
     position: absolute;
-    bottom: var(--spacing-xl);
-    right: var(--spacing-xl);
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    right: calc(20px + env(safe-area-inset-right));
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: var(--color-primary);
+    width: 93px;
+    height: 93px;
+    background-color: #16008B;
     color: var(--color-text-white);
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .createButton:hover {
-    background-color: var(--color-primary-light);
-    transform: scale(1.05);
+    filter: brightness(1.05);
 }
 
 .plusIcon {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 20px 10px;
+    }
+
+    .title {
+        font-size: 31px;
+    }
+
+    .groupList {
+        padding-bottom: 160px;
+    }
+
+    .createButton {
+        width: 80px;
+        height: 80px;
+    }
+
+    .plusIcon {
+        width: 42px;
+        height: 42px;
+    }
 }

@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(47, 47, 47, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,39 +12,48 @@
 }
 
 .modal {
-    background-color: var(--color-sidebar-bg);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
-    width: 90%;
-    max-width: 450px;
-    box-shadow: var(--shadow-lg);
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 40px;
+    width: min(740px, calc(100% - 40px));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--color-primary);
 }
 
 .title {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-xl);
-}
-
-.formGroup {
-    margin-bottom: var(--spacing-lg);
-}
-
-.label {
-    display: block;
-    font-size: var(--font-size-base);
+    font-size: 29px;
     font-weight: 500;
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.rowLabel {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    letter-spacing: 1px;
+}
+
+.rowField {
+    flex: 1;
 }
 
 .input {
     width: 100%;
-    padding: var(--spacing-md);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-base);
+    height: 51px;
+    padding: 0 15px;
+    border: 1px solid #979797;
+    border-radius: 50px;
+    font-size: 19px;
     transition: border-color var(--transition-fast);
 }
 
@@ -59,25 +68,15 @@
 .errorText {
     color: #e74c3c;
     font-size: var(--font-size-sm);
-    margin-top: var(--spacing-xs);
-}
-
-.colorSection {
-    margin-bottom: var(--spacing-xl);
-}
-
-.colorLabel {
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-md);
-    display: block;
+    margin-top: 8px;
+    margin-left: 0;
 }
 
 .colorPicker {
     display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .colorOption {
@@ -86,46 +85,33 @@
     border-radius: var(--radius-full);
     cursor: pointer;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    border: 3px solid transparent;
+    border: none;
 }
 
 .colorOption:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .colorOptionSelected {
-    border-color: var(--color-text-primary);
-    box-shadow: 0 0 0 2px var(--color-sidebar-bg), 0 0 0 4px var(--color-text-primary);
+    box-shadow: 0 0 0 2px #000000;
 }
 
 .actions {
     display: flex;
     justify-content: flex-end;
-    gap: var(--spacing-md);
-}
-
-.cancelButton {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    background-color: transparent;
-    border-radius: var(--radius-md);
-    transition: background-color var(--transition-fast);
-}
-
-.cancelButton:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    margin-top: 18px;
 }
 
 .createButtonModal {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: var(--font-size-base);
-    font-weight: 500;
+    width: 154px;
+    height: 38px;
+    font-size: 20px;
+    font-weight: 400;
     color: var(--color-text-white);
     background-color: var(--color-primary);
-    border-radius: var(--radius-md);
+    border-radius: 11px;
     transition: background-color var(--transition-fast);
+    letter-spacing: 1px;
 }
 
 .createButtonModal:hover {
@@ -135,4 +121,50 @@
 .createButtonModal:disabled {
     background-color: var(--color-border);
     cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 20px;
+        width: min(550px, calc(100% - 24px));
+        border-width: 1px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .rowLabel {
+        font-size: 18px;
+    }
+
+    .input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .colorOption {
+        width: 28px;
+        height: 28px;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .createButtonModal {
+        width: 70%;
+        height: 40px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 420px) {
+    .row {
+        gap: 10px;
+    }
+
+    .createButtonModal {
+        width: 85%;
+    }
 }

@@ -1,9 +1,8 @@
 .noteCard {
     background-color: #FFFFFF;
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .noteContent {
@@ -18,9 +17,10 @@
 .noteMetadata {
     display: flex;
     justify-content: flex-end;
-    gap: var(--spacing-md);
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    gap: 10px;
+    font-size: 14px;
+    color: #353535;
+    font-weight: 500;
 }
 
 .noteDate {
@@ -28,7 +28,7 @@
 }
 
 .noteDot {
-    color: var(--color-text-secondary);
+    color: #353535;
 }
 
 .noteTime {

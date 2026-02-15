@@ -9,8 +9,8 @@
 .header {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: 20px;
+    padding: 15px 20px;
     background-color: var(--color-primary);
     position: sticky;
     top: 0;
@@ -19,8 +19,8 @@
 
 .backButton {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     align-items: center;
     justify-content: center;
     color: var(--color-text-white);
@@ -34,8 +34,8 @@
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 68px;
+    height: 68px;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -45,27 +45,27 @@
 
 .initials {
     color: var(--color-text-white);
-    font-size: var(--font-size-lg);
+    font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
 }
 
 .groupName {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
     color: var(--color-text-white);
 }
 
 .notesContainer {
     flex: 1;
     overflow-y: auto;
-    padding: var(--spacing-lg) var(--spacing-xl);
+    padding: 20px;
 }
 
 .notesList {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 20px;
 }
 
 .emptyState {
@@ -93,5 +93,27 @@
 @media (max-width: 768px) {
     .backButton {
         display: flex;
+    }
+
+    .header {
+        gap: 12px;
+        padding: 12px 14px;
+    }
+
+    .avatar {
+        width: 56px;
+        height: 56px;
+    }
+
+    .initials {
+        font-size: 20px;
+    }
+
+    .groupName {
+        font-size: 20px;
+    }
+
+    .notesContainer {
+        padding: 14px;
     }
 }

@@ -1,4 +1,4 @@
-import styles from './NoteCard.module.css';
+﻿import styles from './NoteCard.module.css';
 import { formatDate, formatTime } from '../../utils/helpers';
 
 const NoteCard = ({ note }) => {
@@ -7,7 +7,7 @@ const NoteCard = ({ note }) => {
             <p className={styles.noteContent}>{note.content}</p>
             <div className={styles.noteMetadata}>
                 <span className={styles.noteDate}>{formatDate(note.createdAt)}</span>
-                <span className={styles.noteDot}>•</span>
+                <span className={styles.noteDot} aria-hidden="true">{'\u2022'}</span>
                 <span className={styles.noteTime}>{formatTime(note.createdAt)}</span>
             </div>
         </div>

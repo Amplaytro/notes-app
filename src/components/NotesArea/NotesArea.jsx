@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import styles from './NotesArea.module.css';
 import NoteCard from '../NoteCard/NoteCard';
 import TextInput from '../TextInput/TextInput';
@@ -7,7 +7,6 @@ import { getInitials } from '../../utils/helpers';
 const NotesArea = ({ group, notes, onAddNote, onBack }) => {
     const notesContainerRef = useRef(null);
 
-    // Scroll to bottom when notes change
     useEffect(() => {
         if (notesContainerRef.current) {
             notesContainerRef.current.scrollTop = notesContainerRef.current.scrollHeight;
@@ -24,10 +23,7 @@ const NotesArea = ({ group, notes, onAddNote, onBack }) => {
                         <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
                     </svg>
                 </button>
-                <div
-                    className={styles.avatar}
-                    style={{ backgroundColor: group.color }}
-                >
+                <div className={styles.avatar} style={{ backgroundColor: group.color }}>
                     <span className={styles.initials}>{getInitials(group.name)}</span>
                 </div>
                 <h2 className={styles.groupName}>{group.name}</h2>
@@ -36,7 +32,7 @@ const NotesArea = ({ group, notes, onAddNote, onBack }) => {
             <div className={styles.notesContainer} ref={notesContainerRef}>
                 {groupNotes.length === 0 ? (
                     <div className={styles.emptyState}>
-                        <span className={styles.emptyIcon}>📝</span>
+                        <span className={styles.emptyIcon}>{'\uD83D\uDCDD'}</span>
                         <p className={styles.emptyText}>No notes yet. Start typing below!</p>
                     </div>
                 ) : (

@@ -1,23 +1,25 @@
 .groupItem {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-xl);
+    gap: 24px;
+    padding: 12px 20px;
     cursor: pointer;
     transition: background-color var(--transition-fast);
+    border-radius: 16px;
+    margin: 0 12px 8px;
 }
 
 .groupItem:hover {
-    background-color: rgba(0, 31, 139, 0.05);
+    background-color: #F3F3F3;
 }
 
 .groupItemSelected {
-    background-color: rgba(0, 31, 139, 0.1);
+    background-color: #E6E6E6;
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 68px;
+    height: 68px;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -27,13 +29,13 @@
 
 .initials {
     color: var(--color-text-white);
-    font-size: var(--font-size-lg);
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 .groupName {
-    font-size: var(--font-size-lg);
+    font-size: 20px;
     font-weight: 500;
     color: var(--color-text-primary);
     overflow: hidden;
