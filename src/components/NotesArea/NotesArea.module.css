@@ -115,5 +115,7 @@
 
     .notesContainer {
         padding: 14px;
+        /* Account for the fixed input bar on mobile so the bottom isn't hidden */
+        padding-bottom: calc(14px + 190px + env(safe-area-inset-bottom));
     }
 }

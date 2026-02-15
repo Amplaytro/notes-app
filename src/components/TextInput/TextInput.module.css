@@ -59,7 +59,12 @@
 
 @media (max-width: 768px) {
     .inputContainer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
         padding: 12px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
