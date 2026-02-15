@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* CSS Reset and Base Styles */
 *,
 *::before,
 *::after {
@@ -10,12 +9,9 @@
 }
 
 :root {
-  /* Colors */
   --color-primary: #001F8B;
-  --color-primary-light: #0047FF;
   --color-background: #DAE5F5;
   --color-sidebar-bg: #FFFFFF;
-  --color-notes-bg: #F7ECDC;
   --color-text-primary: #000000;
   --color-text-secondary: #9A9A9A;
   --color-text-white: #FFFFFF;
@@ -24,39 +20,10 @@
   --color-send-active: #001F8B;
   --color-send-inactive: #ABABAB;
 
-  /* Typography */
   --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-
-  /* Border Radius */
-  --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 20px;
   --radius-full: 50%;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-
-  /* Transitions */
   --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
 }
 
 html,
@@ -68,7 +35,7 @@ body {
 
 body {
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   color: var(--color-text-primary);
   background-color: var(--color-background);
   line-height: 1.5;
@@ -95,7 +62,6 @@ textarea {
   outline: none;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 6px;
 }

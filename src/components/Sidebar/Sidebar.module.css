@@ -8,7 +8,7 @@
 
 .header {
     padding: 24px 24px 12px;
-    background-color: #FFFFFF;
+    background-color: var(--color-sidebar-bg);
     text-align: left;
     position: sticky;
     top: 0;
@@ -30,11 +30,8 @@
 
 .createButton {
     position: absolute;
-    /* Fallbacks for browsers that don't support env(safe-area-*) */
-    bottom: 20px;
-    right: 20px;
-    bottom: calc(20px + env(safe-area-inset-bottom));
-    right: calc(20px + env(safe-area-inset-right));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
     display: flex;
     align-items: center;
     justify-content: center;

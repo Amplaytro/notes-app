@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #DAE5F5;
+    background-color: var(--color-background);
     overflow: hidden;
 }
 
@@ -76,20 +76,19 @@
     height: 100%;
     color: var(--color-text-secondary);
     text-align: center;
-    padding: var(--spacing-xl);
+    padding: 32px;
 }
 
 .emptyIcon {
     font-size: 4rem;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 16px;
     opacity: 0.5;
 }
 
 .emptyText {
-    font-size: var(--font-size-lg);
+    font-size: 1.125rem;
 }
 
-/* Responsive - show back button on mobile */
 @media (max-width: 768px) {
     .backButton {
         display: flex;
@@ -115,7 +114,6 @@
 
     .notesContainer {
         padding: 14px;
-        /* Account for the fixed input bar on mobile so the bottom isn't hidden */
-        padding-bottom: calc(14px + 190px + env(safe-area-inset-bottom));
+        padding-bottom: calc(14px + 190px + env(safe-area-inset-bottom, 0px));
     }
 }
